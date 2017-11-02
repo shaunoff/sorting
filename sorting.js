@@ -1,7 +1,3 @@
-function bubbleSort(){
-	return [];
-};
-
 function BubbleSort(arr){
 	this.startArray = arr
   this.currentArray = this.startArray
@@ -27,3 +23,30 @@ BubbleSort.prototype.iterate = function(){
   }
   return this.currentArray
 }
+
+
+function split(arr){
+  if(arr.length < 2){
+    return arr;
+  } else{
+    var midpoint = Math.floor(arr.length / 2);
+    var firstHalf = arr.slice(0, midpoint);
+    var secondHalf = arr.slice(midpoint);
+  }
+  return merge(split(firstHalf), split(secondHalf));
+};
+
+function merge(arr1, arr2){
+var result = [];
+while(arr1.length || arr2.length){
+  if(arr1[0] <= arr2[0]){
+    var shifted = arr1.shift();
+    result.push(shifted);
+  } else{
+    var shifted = arr2.shift();
+    result.push(shifted);
+  }
+}
+return result;
+
+};

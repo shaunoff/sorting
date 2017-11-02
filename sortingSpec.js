@@ -36,3 +36,19 @@ describe('A bubble sort', function(){
   });
 
 });
+
+
+describe('Merge sort', function(){
+  var megeSort;
+  var startArray = [1,2,3,4,5];
+  var start2 = [36,40,45,51];
+  var start3 = [2,4,5,6,1,3];
+  megeSort = merge(startArray, start2);
+
+
+  it('returns an array', function(){
+    expect(megeSort).toEqual([1,2,3,4,5,36,40,45,51]);
+  });
+
+
+})
